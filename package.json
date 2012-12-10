@@ -1,0 +1,22 @@
+{
+  "name": "pio",
+  "subdomain": "pio",
+  "author": {
+    "name": "Nodejitsu Inc.",
+    "email": "support@nodejitsu.com"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "version": "0.1.2-6",
+  "dependencies": {
+    "socket.io": "0.9.x",
+    "express": "3.0.x",
+    "jade": ">= 0.27.0",
+    "mongodb": "~1.2.2",
+    "redis-url": "~0.1.0"
+  },
+  "engines": {
+    "node": "0.8.x"
+  }
+}

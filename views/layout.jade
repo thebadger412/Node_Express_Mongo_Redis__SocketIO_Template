@@ -1,0 +1,32 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')
+    script(src='http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js')
+    script(src='http://documentcloud.github.com/underscore/underscore.js')
+    script(src='http://documentcloud.github.com/backbone/backbone.js')
+    script(src='/socket.io/socket.io.js')
+
+    script(type='text/javascript')
+      window.onload = function () {
+        // Connect to socket.io
+        var socket = io.connect();
+
+        // React to a received message
+        socket.on('user', function (msg) {
+          console.log('user: ' + msg);
+          //$('#user').html('User ' + msg);
+        });
+
+        socket.on('nusers', function (nusers) {
+        console.log('nusers: ' + nusers);
+          $('#nusers').html('Raspberry Pi\'s online: ' + nusers);
+        });
+      };
+  body
+    block content
+     #nusers
+     #user
+
